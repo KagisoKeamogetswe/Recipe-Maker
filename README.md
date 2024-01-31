@@ -35,7 +35,7 @@ If you find any bug or have an idea for improvement, please open an issu. Your c
 
 ## Auther
 
-This awesome recipie makr was crafted by [Your Name], a passionate cook and a lover of good food.
+This awesome recipie makr was crafted by Keamogetswe, a passionate cook and a lover of good food.
 
 Enjoy cooking and making delicious recipies with Recipie Makr!
 
