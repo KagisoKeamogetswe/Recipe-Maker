@@ -1,8 +1,8 @@
-# Recipie Makr Readme
+# Recipe Maker 
 
-## Intrduction
+## Introduction
 
-Welcome to the Recipie Makr - a simple web application for making and organizing your favorite recipies! This tool is perfect for anyone who loves cooking and wants to keep track of their culinary creations.
+Welcome to the Recipe Maker - a simple web application for making and organizing your favorite recipies! This tool is perfect for anyone who loves cooking and wants to keep track of their culinary creations.
 
 ## Fetures
 
