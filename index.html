@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Maker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .recipe-item {
+            background-color: #fdfdcb;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Recipe Maker</h2>
+
+    <form id="recipeForm">
+        <div class="form-group">
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" class="form-control" id="recipeName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ingredients">Ingredients:</label>
+            <textarea class="form-control" id="ingredients" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="instructions">Instructions:</label>
+            <textarea class="form-control" id="instructions" rows="4" required></textarea>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="addRecipe()">Add Recipe</button>
+    </form>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <h3>Recipes:</h3>
+            <ul id="recipeList" class="list-group">
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <h3>Recipe Links:</h3>
+            <div id="recipeLinks" class="list-group">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function addRecipe() {
+        var recipeName = document.getElementById('recipeName').value;
+        var ingredients = document.getElementById('ingredients').value;
+        var instructions = document.getElementById('instructions').value;
+
+        var li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.innerHTML = `<div class="recipe-item">
+                            <strong>${recipeName}</strong><br>
+                            <em>Ingredients:</em> ${ingredients}<br>
+                            <em>Instructions:</em> ${instructions}
+                        </div>`;
+
+        document.getElementById('recipeList').appendChild(li);
+
+        var link = document.createElement('a');
+        link.href = '#';
+        link.className = 'list-group-item list-group-item-action';
+        link.innerHTML = recipeName;
+        link.onclick = function () {
+            li.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        document.getElementById('recipeLinks').appendChild(link);
+
+        document.getElementById('recipeForm').reset();
+    }
+</script>
+
+</body>
+</html>
